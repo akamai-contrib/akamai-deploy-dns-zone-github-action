@@ -48,11 +48,10 @@ You can retrieve these from [Akamai Control Center](https://control.akamai.com/)
 
 ## Inputs
 
-### `zoneName`
-**Required**
-DNS Zone name: the name of your DNS domain ("example.com" in our example)
+### `zoneName` (**Required**)
+DNS Zone name: the name of your DNS domain ('example.com' in our example)
 
-## `workflow.yml` Example
+## workflow.yml Example
 
 Place in a `.yml` file such as this one in your `.github/workflows` folder. [Refer to the documentation on workflow YAML syntax here.](https://help.github.com/en/articles/workflow-syntax-for-github-actions)
 
