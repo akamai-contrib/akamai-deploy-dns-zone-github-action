@@ -13,7 +13,11 @@ zoneName=$1
 if [ -f ${zoneName}.zone ] ; then 
   echo "Zone file exists: ${zoneName}.zone"
 else
-  echo "Error: ${zoneName}.zone is missing" && exit 123
+  echo -e "Error: ${zoneName}.zone is missing.\nYou may want to add a file called ${zoneName}.zone into the repository with the contents similar to the one below:\n"
+  mycommand0="http --print=b -A edgegrid -a dns: GET :/config-dns/v2/zones/${zoneName}/zone-file Accept:text/dns | grep -v \;\;"
+  eval $mycommand0 > output0
+  cat output0
+  exit 123
 fi 
 
 # response=$(http edgeworkers list-ids --json --section edgeworkers --edgerc ~/.edgerc)
