@@ -1,0 +1,15 @@
+name: "Deploy Akamai Edge DNS zone"
+description: "GitHub Action to update Akamai Edge DNS zones via Akamai API's"
+author: javiergarza
+inputs:
+  zoneName:
+    description:  'Name of DNS zone'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.zoneName}}
+branding:
+  color: orange
+  icon: cloud-lightning
