@@ -35,7 +35,7 @@ mail          IN  A     192.0.2.3             ; IPv4 address for mail.example.co
 
 All sensitive variables should be [set as encrypted secrets](https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables) in the action's configuration.
 
-You need to declare an `AKAMAI_EDGERC` secret in your repository containing the following structure :
+You need to declare an `EDGERC` secret in your repository containing the following structure :
 ```
 [dns]
 client_secret = your_client_secret
@@ -62,7 +62,7 @@ steps:
     - name: Deploy Edgeworkers
       uses: akamai-contrib/akamai-deploy-dns-zone-github-action@1.0
       env:
-        EDGERC: ${{ secrets.AKAMAI_EDGERC }}
+        EDGERC: ${{ secrets.EDGERC }}
       with:
         zoneName: 'example.com' # replace with the name of your domain
 ```

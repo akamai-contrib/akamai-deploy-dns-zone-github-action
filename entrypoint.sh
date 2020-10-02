@@ -2,7 +2,7 @@
 set -o pipefail
 
 # Create /root/.edgerc file from env variable
-echo -e "${AKAMAI_EDGERC}" > ~/.edgerc
+echo -e "${EDGERC}" > ~/.edgerc
 
 #  Set Variables
 zoneName=$1
@@ -22,7 +22,7 @@ mycommand1="http --print=HhbB -A edgegrid -a dns: POST :/config-dns/v2/zones/${z
 echo "Running: $mycommand1"
 eval $mycommand1 > output1
 status=$(cat output1 | grep 'HTTP/1.1 ' | awk '{print $2}')
-if [ $status -eq "204" ] ; then
+if [ $status -eq 204 ] ; then
   # Extract eTag value
   versionID=$(cat output1 | grep 'ETag:' | sed 's/"//g' | awk '{print $2}')
   echo -e "Zone file accepted!\nZone version: ${versionID}\n"

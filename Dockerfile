@@ -8,7 +8,7 @@ LABEL "com.github.actions.color"="orange"
 LABEL version="0.1.0"
 LABEL repository="https://github.com/akamai-contrib/akamai-deploy-dns-zone-github-action"
 LABEL homepage=""
-LABEL maintainer="Javier Garza <dgithub@javiergarza.net>"
+LABEL maintainer="Javier Garza <github@javiergarza.net>"
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
