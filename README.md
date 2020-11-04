@@ -3,6 +3,8 @@ GitHub Action which deploys DNS zone files to Akamai's Edge DNS via DNS API call
 
 <img src="https://developer.akamai.com/assets/img/developer-experience-logo.png" alt="akamai developer experience logo" width="200"/>
 
+Important Note: please copy the YAML syntax from **this README file** (see "workflow.yml Example" section below) into your action YAML and update the "zoneName" parameter to match your DNS domain
+
 # Deploy DNS zone to Akamai Edge DNS   
 
 This action calls the [Akamai DNS API](https://developer.akamai.com/api/cloud_security/edge_dns_zone_management/v2.html) to deploy a DNS zone file into the corresponding Akamai EDGE DNS zone.
@@ -57,7 +59,7 @@ Place in a `.yml` file such as this one in your `.github/workflows` folder. [Ref
 
 ```yaml
 steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Deploy DNS zone file
       uses: akamai-contrib/akamai-deploy-dns-zone-github-action@1.3
       env:
