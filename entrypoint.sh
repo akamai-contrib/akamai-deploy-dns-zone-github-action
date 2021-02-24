@@ -22,7 +22,7 @@ fi
 
 # response=$(http edgeworkers list-ids --json --section edgeworkers --edgerc ~/.edgerc)
 echo "1. uploading zone file"
-mycommand1="http --print=HhbB -A edgegrid -a dns: POST :/config-dns/v2/zones/${zoneName}/zone-file Content-Type:text/dns < ${zoneName}.zone"
+mycommand1="cat ${zoneName}.zone | http --print=HhbB -A edgegrid -a dns: POST :/config-dns/v2/zones/${zoneName}/zone-file Content-Type:text/dns"
 echo "Running: $mycommand1"
 eval $mycommand1 > output1
 status=$(cat output1 | grep 'HTTP/1.1 ' | awk '{print $2}')
