@@ -61,7 +61,7 @@ Place in a `.yml` file such as this one in your `.github/workflows` folder. [Ref
 steps:
     - uses: actions/checkout@v2
     - name: Deploy DNS zone file
-      uses: akamai-contrib/akamai-deploy-dns-zone-github-action@1.3
+      uses: akamai-contrib/akamai-deploy-dns-zone-github-action@1.4
       env:
         EDGERC: ${{ secrets.EDGERC }}
       with:
